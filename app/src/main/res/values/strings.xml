@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HondaProject_Hetra</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="TextHome">Aplikasi ini dirancang untuk membantu mendeteksi cacat pada produk dengan cepat dan akurat menggunakan teknologi canggih. Dengan fitur analisis otomatis</string>
+    <string name="AccesHome">Grant Access</string>
+    <string name="SpareScan">Spare Part Name</string>
+    <string name="SpareTypeScan">Spare Part Type</string>
+    <string name="DialogBox">Before scanning, ensure the object is in good lighting.</string>
+
+</resources>
