@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DisplayImageFragment">
+
+    <ScrollView
+        android:id="@+id/svwrapper"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/ImageDisplay"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_camera_alt_24"
+                    app:shapeAppearanceOverlay="@style/RoundedImageView"
+                    android:layout_width="540px"
+                    android:layout_height="540px" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="45dp"
+                    android:layout_width="match_parent"
+                    android:padding="20dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recyclerView"
+                    android:orientation="horizontal"
+                    android:nestedScrollingEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Information_Check"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ahm-assy"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/baseline_settings_24"
+                                app:tint="@color/Grey" />
+
+                            <TextView
+                                android:layout_marginLeft="20px"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Sensor"
+                                android:gravity="center"
+                                android:textColor="@color/Grey" />
+
+                            <LinearLayout
+                                android:id="@+id/layerkondisi"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_gravity="right"
+                                android:gravity="right">
+
+                                <ImageView
+                                    android:id="@+id/iconkondisi"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/baseline_check_circle_24"
+                                    app:tint="@color/Red"
+                                    android:layout_gravity="center_vertical" />
+
+                                <TextView
+                                    android:id="@+id/kondisi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sensor"
+                                    android:textColor="@color/Grey"
+                                    android:gravity="end"
+                                    android:layout_gravity="center_vertical" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="24dp"
+                            >
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Supplier PIC"
+                                        android:textColor="@color/Grey"
+                                        android:textStyle="bold"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/NameSupplier"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Ramzi syuhada"
+                                        android:textColor="@color/Grey"
+                                        android:textStyle="bold"
+                                        />
+                                </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:layout_marginLeft="120dp"
+                                android:orientation="vertical">
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Check Date"
+                                    android:textColor="@color/Grey"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/CheckDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ramzi syuhada"
+                                    android:textColor="@color/Grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:orientation="vertical">
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Planned Delivery"
+                                    android:textColor="@color/Grey"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/datepalanned"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ramzi"
+                                    android:textColor="@color/Grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/Layer_Button_Check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DialogBtnClose"
+            android:layout_marginRight="20dp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Tambah Photo"
+            android:textStyle="bold"
+            android:background="@drawable/button_grey_style"
+            android:textColor="@color/TextButtonColor" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Lanjut"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_style"
+            android:text="Lanjut"
+            android:textStyle="normal"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</FrameLayout>

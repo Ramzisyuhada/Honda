@@ -30,8 +30,4 @@ render.experimental.xml
 google-services.json
 
 # Android Profiling
-<<<<<<< HEAD
 *.hprof
-=======
-*.hprof
->>>>>>> 349afd0adfe60f7919b5f822c260d4bf4866e1ed
