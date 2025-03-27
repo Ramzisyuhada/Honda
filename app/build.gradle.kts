@@ -33,15 +33,30 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        mlModelBinding = true
+    }
 }
 
 dependencies {
+
+    // Camera
     val camerax_version = "1.3.0"
 
     implementation ("androidx.camera:camera-core:$camerax_version")
     implementation ("androidx.camera:camera-camera2:$camerax_version")
     implementation ("androidx.camera:camera-lifecycle:$camerax_version")
     implementation ("androidx.camera:camera-view:$camerax_version")
+
+    // TFLITE
+    implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
+
+    implementation("org.tensorflow:tensorflow-lite:2.16.1")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-gpu-delegate-plugin:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-gpu-api:2.16.1")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.16.1")
+    implementation("org.tensorflow:tensorflow-lite-select-tf-ops:2.16.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

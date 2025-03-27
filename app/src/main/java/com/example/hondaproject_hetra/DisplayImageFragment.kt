@@ -21,6 +21,10 @@ import com.example.hondaproject_hetra.Model.Barang
 import com.example.hondaproject_hetra.Model.Image
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.surendramaran.yolov8tflite.Adapter.AdapterImage
+import com.surendramaran.yolov8tflite.BoundingBox
+import com.surendramaran.yolov8tflite.Constants.LABELS_PATH
+import com.surendramaran.yolov8tflite.Constants.MODEL_PATH
+import com.surendramaran.yolov8tflite.Detector
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -36,14 +40,15 @@ private const val ARG_PARAM2 = "param2"
  */
 
 
-class DisplayImageFragment : Fragment() {
+class DisplayImageFragment : Fragment(),Detector.DetectorListener {
     private lateinit var barang : Barang
     private lateinit var recyclerView : RecyclerView
     private lateinit var ImageAdapter : AdapterImage
+    private var detector: Detector? = null
 
     public  var tanggal : String = ""
     public var DaftarGambar = ArrayList<Bitmap>()
-
+    private var DaftarLabel = ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -111,6 +116,13 @@ class DisplayImageFragment : Fragment() {
 
         val ButtonLanjut = requireActivity().findViewById<AppCompatButton>(R.id.Lanjut)
         ButtonLanjut.setOnClickListener {
+            for ( gambar in DaftarGambar){
+                detector?.detect(gambar)
+                detector?.Labels?.let { DaftarLabel.add(it) }
+                Log.i("Labels",detector?.Labels.toString())
+            }
+            detector = Detector(requireContext(), MODEL_PATH, LABELS_PATH,this)
+            //detector.detect()
             val Botton_LayerCheck = requireActivity().findViewById<LinearLayout>(R.id.Information_Check)
             Botton_LayerCheck.visibility = View.VISIBLE
             val Botton_Check = requireActivity().findViewById<LinearLayout>(R.id.Layer_Button_Check)
@@ -137,5 +149,13 @@ class DisplayImageFragment : Fragment() {
         super.onDestroyView()
         val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.NavButton)
         bottomNav.visibility = View.VISIBLE
+    }
+
+    override fun onEmptyDetect() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
+        TODO("Not yet implemented")
     }
 }
